@@ -1,0 +1,7 @@
+Copyright (c) 2026 LaunchReel. All rights reserved.
+
+This repository contains the LaunchReel plugin for Claude Code. You may install and use it with
+Claude Code. The LaunchReel service (https://launchreel.firstfoot.dev) is subject to its terms:
+https://launchreel.firstfoot.dev/terms
+
+plugin/skills/motion-craft/LICENSE-launch-film covers the material adapted from launch-film (MIT).

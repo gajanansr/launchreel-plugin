@@ -1,0 +1,9 @@
+{
+  "name": "launchreel",
+  "version": "0.1.0",
+  "description": "Launch videos for the app in your repo, and talking-head reels from your own recordings: Claude writes, cuts, times and reviews them, and you edit on a timeline in the local Studio.",
+  "author": {
+    "name": "LaunchReel"
+  },
+  "homepage": "https://launchreel.firstfoot.dev"
+}

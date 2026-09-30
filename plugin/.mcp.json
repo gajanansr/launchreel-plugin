@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "launchreel": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/bin/launchreel.mjs"
+      ]
+    }
+  }
+}

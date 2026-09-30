@@ -85,6 +85,28 @@ pasting anything:
   `plugin:launchreel@launchreel` when installed from the marketplace). New comments are then pushed into
   the session. On Team/Enterprise plans an admin must enable `channelsEnabled` first.
 
+## Data and privacy
+
+LaunchReel runs on your machine: your repo, your recordings, the transcripts, the videos and the renders stay
+in `./launchreel/` in your repo. It never reads your contacts, email or other apps.
+
+What leaves your machine, and where it goes:
+
+| Service | What is sent | When |
+|---|---|---|
+| **LaunchReel's server** (launchreel.firstfoot.dev, on Cloudflare) | your licence key (or, on the trial, a random install id and the video's name); the text of narration lines; scene lengths for the score | licence checks, the playbook, voice, music |
+| **LaunchReel's server → Cloudflare Workers AI** | the audio track of your recording (never the video) | talking heads, only when whisper.cpp isn't installed on your Mac |
+| **npm** (registry.npmjs.org) | nothing personal: downloads the `launchreel-mcp` package | first run and updates |
+| **Hugging Face** (huggingface.co) | nothing personal: downloads the speech model once | first talking head with whisper.cpp installed |
+| **Google Fonts** | font requests while rendering | renders and previews |
+| **Websites you point it at** | page visits by a headless browser | `inspect_app` and `record_site`, when you or Claude ask |
+
+What the server keeps: no recordings, audio, transcripts, narration text or videos — they are processed and
+discarded. It keeps what billing needs: a hash of your licence key (never the key), the email you bought
+with, usage counts per month, and for a trial the install id, the first video's name and the IP address (to
+keep the trial to one video). Payments go through Dodo Payments on the website, not through the plugin.
+Details: https://launchreel.firstfoot.dev/privacy
+
 ## Many videos per repo
 
 Every video has its own folder in `./launchreel/videos/`. Asking for a new video keeps the old ones.

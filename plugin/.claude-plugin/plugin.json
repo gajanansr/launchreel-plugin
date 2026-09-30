@@ -6,5 +6,10 @@
   "author": {
     "name": "LaunchReel"
   },
-  "homepage": "https://launchreel.firstfoot.dev"
+  "homepage": "https://launchreel.firstfoot.dev",
+  "repository": "https://github.com/gajanansr/launchreel-plugin",
+  "documentationUrl": "https://github.com/gajanansr/launchreel-plugin#readme",
+  "supportUrl": "https://github.com/gajanansr/launchreel-plugin/issues",
+  "privacyPolicyUrl": "https://launchreel.firstfoot.dev/privacy",
+  "termsOfServiceUrl": "https://launchreel.firstfoot.dev/terms"
 }

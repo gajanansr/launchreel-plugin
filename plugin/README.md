@@ -67,10 +67,12 @@ Studio without Claude: `npx launchreel-mcp studio` in the repo that has the proj
 
 Claude transcribes it, cuts the ums, pauses and retakes (and checks every cut by listening back), then
 illustrates what you say: real screen recordings of sites you mention, big words behind you, diagrams. Up to
-10 minutes (2 on the free trial). On a Mac with whisper.cpp (`brew install whisper-cpp`) the transcription
+60 minutes on Pro and Team with whisper.cpp installed (10 without it), 5 on Creator, 2 on the free trial. On a Mac with whisper.cpp (`brew install whisper-cpp`) the transcription
 runs locally — free, private and more precise; otherwise only the audio goes to LaunchReel's server.
 In the Studio: cut and restore words in the Transcript tab, colour in Adjust, "Behind me" (B) for big type
 behind your head.
+
+**Disk space.** A talking-head project keeps working files next to your recording. Rough sizes: about 0.07 GB per minute for 1080p video and 0.3 GB per minute for 4K phone video (an iPhone's HDR video also gets a tone-mapped master the editor reads from), plus the small preview copies and your exports. On a Mac the recording itself is cloned into the project, which takes no extra space. LaunchReel tells you what a recording will take when you add it, and stops if your disk can't fit it. The `storage` tool shows where the space went; `clean_storage` frees preview copies and old undo copies, or deletes a project you're done with (only when you say so).
 
 ## Comments that reach Claude by themselves
 
@@ -116,6 +118,8 @@ Switch between them in the Studio's header, or tell Claude "open the video from 
 
 - **Scenes as code:**
   - `describe_kit`
+  - `find_sfx`: sound effects ranked for a role (entrance, transition, emphasis, …), groups that rotate first;
+    learns from the sounds you remove or mute
   - `write_scene`: writes `launchreel/videos/<video>/scenes/<Name>.tsx`, compiles and lints it, and returns test
     frames. The Studio hot-reloads it.
 - **Project:** `create_project`, `list_videos`, `open_video`, `get_project`, `get_selection`, `apply_edits`, `undo`, `validate`.
@@ -124,7 +128,7 @@ Switch between them in the Studio's header, or tell Claude "open the video from 
   - `preview_motion` (a contact sheet, a row per scene)
   - `qa_report` (empty frames, still stretches, motion energy)
 - **Comments:** `get_comments`, `watch_comments`, `reply_comment`.
-- **Output:** `voice`, `render` + `render_status` (background), `open_editor`.
+- **Output:** `voice`, `render` (waits for the file; `wait: false` runs it in the background) + `render_status`, `open_editor`.
 - **Templates:** `list_looks`, `describe_scenes`.
 
 ## Credits

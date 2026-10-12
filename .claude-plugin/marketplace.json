@@ -3,12 +3,12 @@
   "owner": {
     "name": "LaunchReel"
   },
-  "description": "LaunchReel: launch videos from your repo, made by Claude and edited on a timeline.",
+  "description": "LaunchReel: talking-head videos from your recordings and launch videos from your repo, made by Claude and edited on a timeline.",
   "plugins": [
     {
       "name": "launchreel",
       "source": "./plugin",
-      "description": "Launch videos from your repo, edited on a timeline."
+      "description": "Talking-head videos from your recordings and launch videos from your repo, edited on a timeline."
     }
   ]
 }
